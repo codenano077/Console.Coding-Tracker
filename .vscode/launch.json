@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run in External CMD",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/coding-Tracker/bin/Debug/net9.0/coding-Tracker.exe",
+      "console": "externalTerminal"
+    }
+  ]
+}
