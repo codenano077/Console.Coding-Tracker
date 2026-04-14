@@ -17,6 +17,7 @@ namespace coding_Tracker
                 Console.WriteLine("\n TYPE 2. To add a record");
                 Console.WriteLine("\n TYPE 3. To delete a record");
                 Console.WriteLine("\n TYPE 4. To update a record");
+                Console.WriteLine("\n TYPE 5 . To use stopWatch");
 
                 string commandInput = Console.ReadLine();
 
@@ -44,6 +45,10 @@ namespace coding_Tracker
                     case "4":
                         ProcessUpdate();
                         break;
+                    case "5":
+                        UseStopWatch();
+                        break;
+
                     default:
                         Console.WriteLine("\n Invalid input, please enter a valid command");
                         break;
@@ -51,6 +56,19 @@ namespace coding_Tracker
             }
         }
         
+        private void UseStopWatch()
+        {
+            StopWatch stopWatch = new();
+            Console.WriteLine("\n Press n to start the stopwatch. Press any key again to stop it.");
+            var keyInfo = Console.ReadKey();
+            if (keyInfo.Key == ConsoleKey.N)
+            {
+                stopWatch.Start();
+                Console.WriteLine("\n Stopwatch started. Press any key to stop it.");
+                Console.ReadKey();
+                stopWatch.Stop();
+            }
+        }
         private void ProcessDelete()// this is to process the delete command, it will ask user for the id of the record to be deleted and then delete it from the database
         {
             codingController.Get();
